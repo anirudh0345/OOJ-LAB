@@ -1,0 +1,43 @@
+//Hello world program(Hello)
+import java.lang.*;
+
+public class Hello
+{
+    public static void main(String args[])
+    {
+        System.out.println("Hello world! Here I am .");
+    }
+}
+
+//Multiply by 2 Program(Example)
+import java.lang.*;
+class Example{
+public static void main(String args[]){
+int num;
+num=100;
+System.out.println("This is num:"+num);
+num=num*2;
+System.out.println("The value of num*2 is : ");
+System.out.print(num);
+}
+}
+
+//OddOrEven Program(OddOrEven)
+import java.lang.*;
+import java.util.*;
+class OddOrEven{
+public static void main(String args[]){
+Scanner in= new Scanner(System.in);
+System.out.println("Enter your number here: ");
+int num=in.nextInt();
+if(num%2==0)
+{
+  System.out.println("Your number is even ");
+}
+else
+{
+
+  System.out.println("Your number is odd ");
+}
+}
+}
