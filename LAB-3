@@ -1,0 +1,37 @@
+import java.lang.*;
+import java.util.*;
+public class quadroot{
+public static void main(String args[]){
+Scanner in = new Scanner(System.in);
+double D,realpart,imagpart,root1,root2;
+System.out.println("Enter the value of a: ");
+double a=in.nextDouble();
+System.out.println("Enter the value of b: ");
+double b=in.nextDouble();
+System.out.println("Enter the value of c: ");
+double c=in.nextDouble();
+D=b*b-4*a*c;
+if(D==0)
+{
+  root1=(-b)/(2*a);
+  root2=root1;
+  System.out.println("Root of the equation are:"  +root1+" and "+root2);
+  System.out.println("Roots are real and equal");
+}
+else if(D>0)
+{
+  root1=(-b+Math.sqrt(D))/(2*a);
+  root2=(-b-Math.sqrt(D))/(2*a);
+  System.out.println("Roots of the equation are: " +root1+" and " + root2);
+  System.out.println("Roots are real and distinct");
+}
+else 
+{
+  realpart=(-b)/(2*a);
+  imagpart=(Math.sqrt(-D))/(2*a);
+  System.out.println( "1st root of equation is :" +realpart+"  +i"+imagpart);
+  System.out.println( "2nd root of equation is :" +realpart+" -i"+imagpart);
+  System.out.println("Roots are imaginary");
+}
+}
+}
