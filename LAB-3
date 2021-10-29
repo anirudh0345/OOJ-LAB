@@ -108,3 +108,33 @@ if(avg<=100 && avg>=90)
 }
 }
 }
+
+//Prime number
+import java.lang.*;
+import java.util.*;
+public class prime{
+public static void main(String args[]){
+int n,m,i=0,j;
+Scanner in= new Scanner(System.in);
+System.out.println("Enter the value of the smaller number here: ");
+m = in.nextInt();
+System.out.println("Enter the value of the larger number here: ");
+n = in.nextInt();
+System.out.println("All prime numbers between the two numbers are ");
+for(i=m+1;i<n;i++)
+ {
+    for(j=1;j<=i/2;j++)
+     {
+       if(i==2)
+       {
+        System.out.println("2");
+       }
+         else if(i%j==0)
+       {
+         break;
+       }
+       System.out.println(i +" ");
+     }
+ }
+}
+}
