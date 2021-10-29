@@ -138,3 +138,50 @@ for(i=m+1;i<n;i++)
  }
 }
 }
+
+//Volume and area of shapes
+import java.lang.*;
+import java.util.*;
+public class volume{
+public static void main(String args[]){
+int choice,num,i;
+double h,r,pi=3.14159,volume=0,area=0;
+Scanner in = new Scanner(System.in);
+System.out.println("Enter the number of times you wish to perform calculation");
+num = in.nextInt();
+for(i=0;i<num;i++)
+{
+System.out.println("Enter the number for desired shape");
+System.out.println("1:Cone	2:Cylinder      3:Sphere");
+choice = in.nextInt();
+switch(choice)
+{
+case 1:
+System.out.println("Enter the radius of cone");
+r = in.nextDouble();
+System.out.println("Enter the height of cone");
+h = in.nextDouble();
+volume = (pi*r*r*h)/3 ;
+area = (pi*r)*(r+Math.sqrt((r*r)+(h*h)));
+break;
+case 2:
+System.out.println("Enter the radius of cyliner");
+r = in.nextDouble();
+System.out.println("Enter the height of cylinder");
+h = in.nextDouble();
+volume = (pi*r*r*h);
+area = (2*pi*r*h)+(2*pi*r*r);
+break;
+case 3:
+System.out.println("Enter the radius of sphere");
+r = in.nextDouble();
+volume = (pi*r*r*r*4)/3 ;
+area = (pi*r*r*4) ;
+break;
+default:System.out.println("Wrong number entered , try again.");
+}
+System.out.println("Volume of the shape is  " +volume );
+System.out.println("Area of the shape is  " +area );
+}
+}
+}
