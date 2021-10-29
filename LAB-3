@@ -1,3 +1,4 @@
+//Quadratic roots
 import java.lang.*;
 import java.util.*;
 public class quadroot{
@@ -32,6 +33,27 @@ else
   System.out.println( "1st root of equation is :" +realpart+"  +i"+imagpart);
   System.out.println( "2nd root of equation is :" +realpart+" -i"+imagpart);
   System.out.println("Roots are imaginary");
+}
+}
+}
+
+//Increasing matrix
+import java.lang.*;
+import java.util.*;
+public class incmatrix{
+public static void main(String args[]){
+int n,i=0,j=0,k=1;
+Scanner in= new Scanner(System.in);
+System.out.println("Enter the value of n here: ");
+n = in.nextInt();
+for(i=0;i<n;i++)
+{
+for(j=0;j<i+1;j++)
+{
+System.out.print(k+" ");
+k++;
+}
+System.out.println("");
 }
 }
 }
