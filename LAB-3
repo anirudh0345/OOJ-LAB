@@ -114,7 +114,7 @@ import java.lang.*;
 import java.util.*;
 public class prime{
 public static void main(String args[]){
-int n,m,i=0,j;
+int n,m,i=0,j,flag=0;
 Scanner in= new Scanner(System.in);
 System.out.println("Enter the value of the smaller number here: ");
 m = in.nextInt();
@@ -125,15 +125,15 @@ for(i=m+1;i<n;i++)
  {
     for(j=1;j<=i/2;j++)
      {
-       if(i==2)
+         if(i%j==0)
        {
-        System.out.println("2");
-       }
-         else if(i%j==0)
-       {
+         flag=1;
          break;
        }
-       System.out.println(i +" ");
+       if(flag==0)
+       {
+        System.out.println(i +" ");
+        }
      }
  }
 }
