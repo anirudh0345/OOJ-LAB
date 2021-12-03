@@ -57,6 +57,7 @@ ob3.printArea();
 import java.lang.*;
 import java.util.*;
 
+//bank account
 public class bank_account{
 String name;
 double acc_number;
