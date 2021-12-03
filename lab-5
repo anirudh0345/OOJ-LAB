@@ -1,0 +1,55 @@
+//java program to create abstract class shape and subclasses rectangle,triangle and square. Method to print area.
+import java.lang.*;
+import java.util.*;
+
+abstract class shape{
+Scanner scan = new Scanner(System.in);
+static double length;
+static double breadth;
+abstract void printArea();
+}
+
+class rectangle extends shape{
+void printArea()
+{
+double area1;
+area1=length*breadth;
+System.out.println("Area of the recatngle is " +area1);
+}
+}
+
+class triangle extends shape{
+void printArea()
+{
+double area2;
+area2=(length*breadth)/2;
+System.out.println("Area of the right triangle is " +area2);
+}
+}
+
+class circle extends shape{
+void printArea()
+{
+double area3;
+// here length is circumference and breadth is diameter
+area3=(length*breadth)/4;
+System.out.println("Area of the circle is " +area3);
+}
+}
+
+public class polyarea{
+public static void main(String args[])
+{
+Scanner scan = new Scanner(System.in);
+System.out.println("Enter the length");
+shape.length = scan.nextDouble();
+System.out.println("Enter the breadth");
+shape.breadth = scan.nextDouble();
+rectangle ob1 = new rectangle();
+triangle ob2 = new triangle();
+circle ob3 = new circle();
+ob1.printArea();
+ob2.printArea();
+ob3.printArea();
+}
+}
