@@ -53,3 +53,50 @@ ob2.printArea();
 ob3.printArea();
 }
 }
+
+import java.lang.*;
+import java.util.*;
+
+public class bank_account{
+String name;
+double acc_number;
+string acc_type;
+double deposit;
+double balance;
+Scanner scan = new Scanner(System.in);
+
+void accept()
+{
+System.out.println("Enter your name");
+name = scan.nextLine();
+System.out.println("Enter your account number");
+acc_number = scan.nextDouble();
+System.out.println("Enter your account type");
+acc_type = scan.nextLine();
+System.out.println("Enter the amount you want to deposit");
+name = scan.nextLine();
+}
+}
+
+class sav-acct extends bank_account{
+double years;
+double simple_interest;
+double withdrawal;
+simple_interest=((deposit)*(5)*(years))/100;
+Scanner scan = new Scanner(System.in);
+void accept1()
+{
+System.out.println("Enter number of years");
+years = scan.nextDouble();
+}
+}
+
+class curr-acct extends bank_account{
+double service_charge;
+double min_bal;
+min_bal=500;
+service_charge=2;
+}
+
+public class bank{
+public static void main(String args[]){
