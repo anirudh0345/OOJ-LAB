@@ -185,3 +185,110 @@ System.out.println("Area of the shape is  " +area );
 }
 }
 }
+//student enrollment
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    char arr[20];
+    int elective[1];
+    int num,i,j,k,choice,ct1=0,ct2=0,ct3=0,flag=0;
+    printf("Enter number of students : ");
+    scanf("%d",&num);
+    printf("\nEnter the corresponding numbers for respective electives \n");
+    printf("1:Internet of things 2:Advanced java 3:J2EE\n ");
+    for(i=1;i<num;i++)
+    {
+   printf("Enter the details of the student here: ");
+   scanf("%s%d",arr[i],&elective[i]);
+    }
+    printf("\nTo know the names of students who opted for specific elective enter the corresponding number as above.\n");
+    scanf("%d",&choice);
+    switch(choice)
+    {
+        case 1:
+        for(k=1;k<num;k++)
+        {
+        if(std[k].elective==1)
+        {
+         printf("%s\n",std[k].name);
+         ct1++;
+        }
+        }
+                case 2:
+        for(k=1;k<num;k++)
+        {
+        if(std[k].elective==2)
+        {
+         printf("%s\n",std[k].name);
+         ct2++;
+        }
+        }
+                case 3:
+        for(k=1;k<num;k++)
+        {
+        if(std[k].elective==3)
+        {
+         printf("%s\n",std[k].name);
+         ct3++;
+        }
+        }
+    }
+    printf("No. of students in Internet of things is %d",ct1);
+    printf("No. of students in Advanced Java is %d",ct2);
+    printf("No. of students in J2EE is %d",ct3);
+    if(ct1<30)
+    {
+        printf("Students of electives 2 and 3 should reconsider their choice");
+    }
+    else if(ct2<30)
+    {
+        printf("Students of electives 1 and 3 should reconsider their choice");
+    }
+    else if(ct3<30)
+    {
+        printf("Students of electives 1 and 2 should reconsider their choice");
+    }
+    else
+    {
+        flag=1;
+    }
+      for(i=1;i<num;i++)
+    {
+   printf("Enter the details of the student here: ");
+   scanf("%s%d",std[i].name,&std[i].elective);
+    }
+    printf("\nTo know the names of students who opted for specific elective enter the corresponding number as above.\n");
+    scanf("%d",&choice);
+    switch(choice)
+    {
+        case 1:
+        for(k=1;k<num;k++)
+        {
+        if(std[k].elective==1)
+        {
+         printf("%s\n",std[k].name);
+         ct1++;
+        }
+        }
+                case 2:
+        for(k=1;k<num;k++)
+        {
+        if(std[k].elective==2)
+        {
+         printf("%s\n",std[k].name);
+         ct2++;
+        }
+        }
+                case 3:
+        for(k=1;k<num;k++)
+        {
+        if(std[k].elective==3)
+        {
+         printf("%s\n",std[k].name);
+         ct3++;
+        }
+        }
+    }
+    return 0;
+}
