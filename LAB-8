@@ -1,110 +1,59 @@
-import CIE.*;
-import SEE.*;
-import java.lang.*;
-import java.util.*;
-
-public class Total_marks
+import java.util.Scanner;
+class pair<A,B>
 {
-	public static void main(String args[]){
-	int i=0;
-	int j=0;
-	int n=0;
-	Scanner sc = new Scanner(System.in);
-	int total[] = new int[5];
-	System.out.println("Enter the number of students: ");
-	n = sc.nextInt();
-	CIE.student s[] = new CIE.student[n];
-	CIE.internals ci[] = new CIE.internals[n];
-	SEE.externals se[] = new SEE.externals[n];
-	for(i=0;i<n;i++)
+	A ob1;
+	B ob2;
+
+	pair(A o1,B o2)
 	{
-	System.out.println("Enter details of student " +(i+1) +" : ");
-	s[i] = new CIE.student();
-	s[i].accept();
-	ci[i] = new CIE.internals();
-	ci[i].accept();
-	se[i] = new SEE.externals();
-	se[i].accept();
+	    ob1 = o1;
+	    ob2  = o2;
 	}
-	for(i=0;i<n;i++)
-	{
-	System.out.println("Details of Student "+(i+1));
-	s[i].display();
-	for(j=0;j<5;j++)
-	{
-	total[j]=ci[i].ciem[j]+se[i].seem[j];
-	System.out.println("total marks in subject "+(j+1)+":"+total[j]);
 	
+	void showTypes()
+	{
+		System.out.println("Type of first: "+ob1.getClass().getName());
+		System.out.println("Type of first: "+ob2.getClass().getName());
+	}
+	A getob1()
+	{
+		return ob1;
+	}
+	B getob2()
+	{
+		return ob2;
+	}
+}
+public class Generics{
+	public static void main(String args[]){
+	Scanner scan = new Scanner(System.in);
+	System.out.println("Enter the string here: ");
+	String s = scan.nextLine();
+	System.out.println("Enter the integer here: ");
+	int i = scan.nextInt();
+
 	System.out.println();
-	}
-	}
-}
-}
 
-package CIE;
-import java.lang.*;
-import java.util.*;
+	System.out.println("Enter the string here:  ");
+	String st = scan.next();
+	System.out.println("Enter any integer here:  ");
+	int d = scan.nextInt();
 
-public class internals extends CIE.student{
-	Scanner sc = new Scanner(System.in);
-	int i=0;
-	public int ciem[] = new int[5];
+	pair<String, Integer> Obj1 = new pair<String, Integer>(s,i);
+	Obj1.showTypes();
+	
+	String str = Obj1.getob1();
+	System.out.println("Value of 1st string:  " +str);
+	int v = Obj1.getob2();
+	System.out.println("Value of 1st integer: "+v);
 
-	public void accept()
-	{
-		for(i=0;i<5;i++)
-		{
-		System.out.println("Enter the CIE marks of subject "+(i+1) +" : ");
-		ciem[i] = sc.nextInt();
-		}
-	}
-}
-
-package CIE;
-import java.lang.*;
-import java.util.*;
-
-public class student{
-	Scanner sc = new Scanner(System.in);
-	public String usn;
-	public String name;
-	public int sem;
-
-	public void accept()
-	{
-	System.out.println("Enter the USN of student: ");
-	usn = sc.nextLine();
-	System.out.println("Enter the Name of student: ");
-	name = sc.nextLine();
-	System.out.println("Enter the semester no. : ");
-	sem = sc.nextInt();
-	}
-
-	public void display()
-	{
-	System.out.println("USN of student: "+usn);
-	System.out.println("Enter the Name of student: "+name);
-	System.out.println("Enter the semester no. : "+sem);
-	}
-}
-
-package SEE;
-import CIE.*;
-import java.lang.*;
-import java.util.*;
-
-public class externals extends CIE.student{
-	Scanner sc = new Scanner(System.in);
-	int i=0;
-	public int seem[] = new int[5];
-
-	public void accept()
-	{
-		for(i=0;i<5;i++)
-		{
-		System.out.println("Enter the SEE marks of subject "+(i+1) +" : ");
-		seem[i] = sc.nextInt();
-		}
+	pair<String, Integer> Obj2 = new pair<String, Integer>(s,i);
+	Obj2.showTypes();
+	
+	String strn = Obj2.getob1();
+	System.out.println("Value of 2nd string:  " +strn);
+	int vd = Obj2.getob2();
+	System.out.println("Value of 2nd integer: "+vd);
 	}
 }
 
