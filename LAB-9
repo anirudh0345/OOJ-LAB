@@ -1,0 +1,81 @@
+//Exception handling in a inheritance tree
+
+import java.lang.*;
+import java.util.*;
+class father_age_exception extends Exception
+{
+	public String toString()
+	{
+		return("Father's age is less than zero.");
+	}
+}
+
+class son_age_exception extends Exception
+{
+	int a;
+	son_age_exception (int age)
+	{
+		a = age;
+	}
+	public String toString()
+	{
+		if(a<0)
+		  return("Son's age is less than zero.");
+		else
+		  return("Son's age is more than father's age");
+	}
+}
+
+class Father
+{
+	public int agel;
+	Scanner in = new Scanner(System.in);
+	int age1;
+	Father()
+	{
+		System.out.println("Enter age of father: ");
+		age1 = in.nextInt();
+	}
+	void ex1() throws  father_age_exception
+	{
+		if(age1 < 0)
+			throw new  father_age_exception();
+	}
+}
+
+class Son extends Father
+{
+	public int age2;
+	Son()
+	{
+		System.out.println("Enter age of son: ");
+		age2 = in.nextInt();
+	}
+	void ex2() throws son_age_exception
+	{	
+		if(age2 < 0 || age2>super.age1)
+		throw new son_age_exception(age2);
+	}
+}
+
+public class lab8
+{
+	public static void main(String args[]){
+		Son s = new Son();{
+		try{
+			s.ex1();
+		}
+		catch(father_age_exception e)
+		{
+			System.out.println(e);
+		}
+		try{
+			s.ex2();
+		}
+		catch(son_age_exception e)
+		{
+			System.out.println(e);
+		}
+		}
+	}
+}
